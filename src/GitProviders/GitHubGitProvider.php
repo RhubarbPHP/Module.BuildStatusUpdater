@@ -7,7 +7,7 @@ use Rhubarb\BuildStatusUpdater\Settings\GitProviderSettings;
 
 class GitHubGitProvider extends GitProvider
 {
-    public function UpdateCommitStatus($owner, $repos, $sha, $status)
+    public function updateCommitStatus($owner, $repos, $sha, $buildRef, $status, $description = "", $ciUrl = "")
     {
         $client = new GitHubClient();
 
@@ -17,7 +17,8 @@ class GitHubGitProvider extends GitProvider
             $client->setCredentials($settings->Username, $settings->Password);
         }
 
-        $client->repos->statuses->createStatus( $owner, $repos, $sha, self::ConvertStatus($status) );
+        $client->repos->statuses->createStatus( $owner, $repos, $sha, $this->convertStatus($status),
+            $ciUrl, $description, $buildRef);
     }
 
     /**
@@ -27,7 +28,7 @@ class GitHubGitProvider extends GitProvider
      * @param $baseStatus
      * @return string
      */
-    public function ConvertStatus($baseStatus)
+    protected function convertStatus($baseStatus)
     {
         return $baseStatus;
     }

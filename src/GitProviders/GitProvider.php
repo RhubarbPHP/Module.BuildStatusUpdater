@@ -16,7 +16,19 @@ abstract class GitProvider
      * @param $baseStatus
      * @return string
      */
-    public abstract function ConvertStatus($baseStatus);
+    protected abstract function convertStatus($baseStatus);
 
-    public abstract function UpdateCommitStatus( $sha, $owner, $repos, $status );
+    /**
+     * Add a status to a commit
+     *
+     * @param string $owner
+     * @param string $repos
+     * @param string $sha
+     * @param string $buildRef
+     * @param string $status A status from the GitProvider::STATUS_XXX set of constants
+     * @param string $description An optional description
+     * @param string $ciUrl A URL for the full build status.
+     * @return mixed
+     */
+    public abstract function updateCommitStatus( $owner, $repos, $sha, $buildRef, $status, $description = "", $ciUrl = "" );
 }
