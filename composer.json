@@ -1,0 +1,21 @@
+{
+  "name": "rhubarbphp/module-build-status-updater",
+  "description": "Provides a provider for updating common cloud git hosting services with build status.",
+  "keywords": [ "git", "bitbucket", "github", "jenkins", "hudson", "build", "status", "rhubarb", "php" ],
+  "homepage": "http://www.rhubarbphp.com/",
+  "license": "Apache-2.0",
+  "autoload": {
+    "psr-4": {
+      "Rhubarb\\BuildStatusUpdater\\": "src/",
+      "Rhubarb\\BuildStatusUpdater\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "rhubarbphp/rhubarb": "*",
+    "gentle/bitbucket-api": "0.7.1",
+    "tan-tan-kanarek/github-php-client": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.*"
+  }
+}
