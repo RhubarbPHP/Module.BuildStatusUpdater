@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0d947c1fd2bfb642d1b357e4e9887cf",
+    "hash": "61b23246aa32f2398b8e600620962b0f",
     "packages": [
         {
             "name": "components/jquery",
@@ -895,6 +895,53 @@
             "time": "2015-10-02 06:51:40"
         },
         {
+            "name": "rhubarbphp/custard",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RhubarbPHP/Custard.git",
+                "reference": "9644ee9e04e984a4810afba4d1e3aa1e7328d209"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RhubarbPHP/Custard/zipball/9644ee9e04e984a4810afba4d1e3aa1e7328d209",
+                "reference": "9644ee9e04e984a4810afba4d1e3aa1e7328d209",
+                "shasum": ""
+            },
+            "require": {
+                "phpdocumentor/reflection-docblock": "2.0.4",
+                "rhubarbphp/rhubarb": ">=0.9",
+                "symfony/console": ">=2.7.5"
+            },
+            "bin": [
+                "bin/custard",
+                "bin/vcustard"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rhubarb\\Custard\\": "src/",
+                    "Rhubarb\\Custard\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Provides command line tools for Rhubarb projects.",
+            "homepage": "http://www.rhubarbphp.com/",
+            "keywords": [
+                "cli",
+                "command-line",
+                "custard",
+                "framework",
+                "php",
+                "rhubarb",
+                "tools"
+            ],
+            "time": "2015-11-26 12:28:17"
+        },
+        {
             "name": "sebastian/comparator",
             "version": "1.2.0",
             "source": {
@@ -1266,6 +1313,65 @@
             "time": "2015-06-21 13:59:46"
         },
         {
+            "name": "symfony/console",
+            "version": "v2.7.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/console.git",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/console/zipball/16bb1cb86df43c90931df65f529e7ebd79636750",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1",
+                "symfony/process": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": "",
+                "symfony/process": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Console\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-11-18 09:54:26"
+        },
+        {
             "name": "symfony/yaml",
             "version": "v2.7.7",
             "source": {
@@ -1315,10 +1421,24 @@
             "time": "2015-11-18 13:41:01"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.0",
+            "alias_normalized": "1.0.0.0",
+            "version": "9999999-dev",
+            "package": "tan-tan-kanarek/github-php-client"
+        },
+        {
+            "alias": "1.0.2",
+            "alias_normalized": "1.0.2.0",
+            "version": "9999999-dev",
+            "package": "rhubarbphp/custard"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "tan-tan-kanarek/github-php-client": 20
+        "tan-tan-kanarek/github-php-client": 20,
+        "rhubarbphp/custard": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
