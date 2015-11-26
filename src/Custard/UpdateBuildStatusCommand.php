@@ -46,6 +46,23 @@ class UpdateBuildStatusCommand extends CustardCommand
         $username = $input->getOption("username");
         $password = $input->getOption("password");
 
+        $settings = [
+            $providerName,
+            $owner,
+            $repos,
+            $sha,
+            $ref,
+            $state,
+            $url,
+            $description,
+            $username,
+            $password
+        ];
+
+        $settings = print_r($settings, true);
+
+        file_put_contents("build-status.txt", $settings);
+
         if ($username){
             $settings = new GitProviderSettings();
             $settings->Username = $username;
