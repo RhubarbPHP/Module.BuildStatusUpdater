@@ -11,10 +11,10 @@ class GitHubGitProvider extends GitProvider
     {
         $client = new GitHubClient();
 
-        $settings = new GitProviderSettings();
+        $settings = GitProviderSettings::singleton();
 
-        if ( $settings->Username ){
-            $client->setCredentials($settings->Username, $settings->Password);
+        if ( $settings->username ){
+            $client->setCredentials($settings->username, $settings->password);
         }
 
         $client->repos->statuses->createStatus( $owner, $repos, $sha, $this->convertStatus($status),

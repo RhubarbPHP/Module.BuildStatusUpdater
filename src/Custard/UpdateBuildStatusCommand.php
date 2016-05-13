@@ -47,9 +47,9 @@ class UpdateBuildStatusCommand extends CustardCommand
         $password = $input->getOption("password");
 
         if ($username){
-            $settings = new GitProviderSettings();
-            $settings->Username = $username;
-            $settings->Password = $password;
+            $settings = GitProviderSettings::singleton();
+            $settings->username = $username;
+            $settings->password = $password;
         }
 
         /**
