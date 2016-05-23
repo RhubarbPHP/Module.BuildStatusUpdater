@@ -11,13 +11,12 @@
     }
   },
   "require": {
-    "rhubarbphp/rhubarb": "*",
+    "rhubarbphp/rhubarb": "^1.0.0",
     "gentle/bitbucket-api": "0.7.1",
-    "tan-tan-kanarek/github-php-client": "dev-master as 1.0"
+    "tan-tan-kanarek/github-php-client": "^1.0.0"
   },
   "require-dev": {
-    "rhubarbphp/custard": "1.0.3",
-    "phpunit/phpunit": "4.*"
+    "rhubarbphp/custard": "^1.0.3"
   },
   "config": {
     "bin-dir": "bin/"
