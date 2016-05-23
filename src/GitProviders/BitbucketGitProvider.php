@@ -48,12 +48,12 @@ class BitbucketGitProvider extends GitProvider
     public function updateCommitStatus($owner, $repos, $sha, $buildRef, $status, $description = "", $ciUrl = "")
     {
         $statusEndPoint = new BitbucketBuildStatus();
-        $settings = new GitProviderSettings();
+        $settings = GitProviderSettings::singleton();
 
-        if ($settings->Username) {
+        if ($settings->username) {
 
             $statusEndPoint->getClient()->addListener(
-                new BasicAuthListener($settings->Username, $settings->Password)
+                new BasicAuthListener($settings->username, $settings->password)
             );
         }
 
